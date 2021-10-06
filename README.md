@@ -1,2 +1,2 @@
-# Movie-Ratings-Prediction-IMDB--NLP
-Natural Language Processing
+# Movie Ratings Prediction (IMDB)
+
