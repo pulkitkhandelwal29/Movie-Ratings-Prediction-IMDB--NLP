@@ -43,4 +43,11 @@ contract dataencrypt_coin_ico {
         total_dataencrypt_coins_bought += dataencrypt_coins_bought;
     }
 
+    //Selling dataencrypt_coins
+    function sell_dataencrypt_coins(address, investor, uint dataencrypt_coins_sold) external {
+        equity_dataencrypt_coins[investor] -= dataencrypt_coins_sold;
+        equity_usd[investor] = equity_dataencrypt_coins[investor] / 1000;
+        total_dataencrypt_coins_bought -= dataencrypt_coins_sold;
+    }
+
 }
