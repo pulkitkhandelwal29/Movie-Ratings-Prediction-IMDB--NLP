@@ -1,2 +1,4 @@
-# Movie Ratings Prediction (IMDB)
+# Smart Conntracts
+
+## Ethereum
 
