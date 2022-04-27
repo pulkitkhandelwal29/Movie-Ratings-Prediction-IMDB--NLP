@@ -14,4 +14,9 @@ contract dataencrypt_coin_ico {
     // Introducing the total number of dataencrypt_coins that have been bought by the investors
     uint public total_dataencrypt_coins_bought = 0;
 
+    //Mapping from the innvestor address to its equity in dataencrypt_coins and USD
+    mapping(address => uint) equity_dataencrypt_coins;
+    mapping(address => uint) equity_usd;
+
+
 }
