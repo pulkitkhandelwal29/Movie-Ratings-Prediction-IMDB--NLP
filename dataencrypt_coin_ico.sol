@@ -24,4 +24,14 @@ contract dataencrypt_coin_ico {
         _;
     }
 
+    //Getting the equity in dataencrypt_coins of an investor
+    function equity_in_dataencrypt_coins(address investor) external constant returns (uint) {
+        return equity_dataencrypt_coins[investor];
+    }
+
+    //Getting the equity in USD of an investor
+    function equity_in_usd(address investor) external constant returns (uint) {
+        return equity_usd[investor];
+    }
+
 }
