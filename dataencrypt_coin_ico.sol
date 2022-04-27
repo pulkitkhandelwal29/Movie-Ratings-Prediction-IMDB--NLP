@@ -14,7 +14,7 @@ contract dataencrypt_coin_ico {
     // Introducing the total number of dataencrypt_coins that have been bought by the investors
     uint public total_dataencrypt_coins_bought = 0;
 
-    //Mapping from the innvestor address to its equity in dataencrypt_coins and USD
+    //Mapping from the investor address to its equity in dataencrypt_coins and USD
     mapping(address => uint) equity_dataencrypt_coins;
     mapping(address => uint) equity_usd;
 
@@ -32,6 +32,15 @@ contract dataencrypt_coin_ico {
     //Getting the equity in USD of an investor
     function equity_in_usd(address investor) external constant returns (uint) {
         return equity_usd[investor];
+    }
+
+    //Buying dataencrypt_coins
+    function buy_dataencrypt_coins(address, investor, uint usd_invested) external 
+    can_buy_dataencrypt_coins(usd_invested) {
+        uint dataencrypt_coins_bought = usd_invested * usd_to_dataencrypt_coins;
+        equity_dataencrypt_coins[investor] += dataencrypt_coins_bought;
+        equity_usd[investor] = equity_dataencrypt_coins[investor] / 1000;
+        total_dataencrypt_coins_bought += dataencrypt_coins_bought;
     }
 
 }
