@@ -18,5 +18,10 @@ contract dataencrypt_coin_ico {
     mapping(address => uint) equity_dataencrypt_coins;
     mapping(address => uint) equity_usd;
 
+    // Checking if an investor can buy dataencrypt_coins
+    modifier can_buy_dataencrypt_coins(uint usd_invested) {
+        require (usd_invested * usd_to_dataencrypt_coins + total_dataencrypt_coins_bought <= max_dataencrypt_coins);
+        _;
+    }
 
 }
